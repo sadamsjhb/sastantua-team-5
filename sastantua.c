@@ -6,7 +6,7 @@
 /*   By: wtwala <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 17:02:16 by wtwala            #+#    #+#             */
-/*   Updated: 2020/06/26 17:02:20 by wtwala           ###   ########.fr       */
+/*   Updated: 2020/06/26 17:37:46 by ukhoba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,39 @@
 /*   Updated: 2020/06/26 11:14:13 by sadams           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	if	(*str != '\0')
+	{
+		ft_putchar(*str);
+		str++;
+		ft_putstr(str);
+	}
+}
 
 int 	main(int argc, char **argv)
 {
 
 	argv++;
-	while	(**argv != '\0')
+	if	(**argv != '\0')
 	{
-	
+		argv++;
 	}
+
+	ft_putstr("  /*\\ ");
+	ft_putchar('\n');
+	ft_putstr(" /***\\ ");
+	ft_putchar('\n');
+	ft_putstr("/**|**\\");
+	ft_putchar('\n');
+
+	return 0;
 
 }
